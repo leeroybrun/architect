@@ -341,7 +341,8 @@ function checkCycles(config) {
     });
 
     var resolved = {
-        hub: true
+        hub: true,
+        app: true
     };
     var changed = true;
     var sorted = [];
