@@ -483,7 +483,11 @@ Architect.prototype.registerPlugin = function(plugin, next) {
     var imports = {};
     if (plugin.consumes) {
         plugin.consumes.forEach(function (name) {
-            imports[name] = services[name];
+            if(name === 'app') {
+                imports['app'] = app;
+            } else {
+                imports[name] = services[name];
+            }
         });
     }
 
